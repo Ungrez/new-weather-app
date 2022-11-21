@@ -1,0 +1,35 @@
+@import "variables";
+#today {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+  height: 55vh;
+
+  &_short {
+    border-radius: 30px;
+    flex-basis: 40%;
+    background-color: green;
+    &.--light {
+      background: $light-mode-today-element;
+      box-shadow: 0 1px 10px #0000004b;
+    }
+    &.--dark {
+      background: $dark-mode-today-element;
+      box-shadow: 0 0px 7px #0000004b;
+    }
+  }
+  &_info {
+    border-radius: 30px;
+    flex-basis: 50%;
+    &.--light {
+      background-color: $light-mode-today-info-element;
+      box-shadow: 0 0px 10px #0000001b;
+    }
+    &.--dark {
+      background: $dark-mode-today-info-element;
+      box-shadow: 0 0px 7px #0000004b;
+    }
+  }
+}

@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "types": ["node"],
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -18,9 +16,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "downlevelIteration": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"],
+      "@turn/styled": ["src/styled"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["./src/**/*", "./test-utils/**/*", "./__mocks__/**/*"],
+  "exclude": ["node_modules"]
 }

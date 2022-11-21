@@ -1,0 +1,33 @@
+@import "variables";
+#app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  transition: 0.3s;
+  &.--light {
+    background-color: $light-mode-background;
+  }
+  &.--dark {
+    background-color: $dark-mode-background;
+  }
+}
+#app_background {
+  position: fixed;
+  z-index: -1;
+  background-color: #d0e9ff;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+  filter: blur(20px);
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 380px;
+    height: 380px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+}
