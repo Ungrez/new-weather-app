@@ -8,27 +8,68 @@
   height: 55vh;
 
   &_short {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     border-radius: 30px;
-    flex-basis: 40%;
-    background-color: green;
+    flex-basis: 42%;
+    padding: 10px 0;
+
+    &_icon {
+      position: relative;
+      margin: 0 20px;
+      & img {
+        position: absolute;
+        top: -40px;
+        width: 150px;
+      }
+    }
+    &_wind {
+      align-self: center;
+      justify-self: center;
+      & img {
+        width: 80px;
+        float: right;
+      }
+    }
+    &_temp {
+      text-align: center;
+      align-self: center;
+      font-size: 66px;
+      font-weight: 700;
+      & p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: -webkit-linear-gradient(#ffffff, #ffffff70);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      & span {
+        font-size: 24px;
+      }
+    }
+    &_name {
+      text-align: center;
+      align-self: center;
+      line-height: 1.7;
+      color: white;
+      text-transform: uppercase;
+      & p:nth-child(1) {
+        font-size: 19px;
+        font-weight: 600;
+      }
+      & p:nth-child(2) {
+        font-size: 16px;
+      }
+    }
+
     &.--light {
       background: $light-mode-today-element;
       box-shadow: 0 1px 10px #0000004b;
     }
     &.--dark {
       background: $dark-mode-today-element;
-      box-shadow: 0 0px 7px #0000004b;
-    }
-  }
-  &_info {
-    border-radius: 30px;
-    flex-basis: 50%;
-    &.--light {
-      background-color: $light-mode-today-info-element;
-      box-shadow: 0 0px 10px #0000001b;
-    }
-    &.--dark {
-      background: $dark-mode-today-info-element;
       box-shadow: 0 0px 7px #0000004b;
     }
   }
